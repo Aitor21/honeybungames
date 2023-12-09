@@ -1,0 +1,149 @@
+.c-pagination {
+	display: flex;
+	justify-content: center;
+	padding-top: rem(60px);
+
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(80px);
+	}
+
+	.pagination {
+		border: 2px solid $black;
+		border-radius: 0;
+		font-size: 0;
+
+		li,
+		li.page-item {
+			border: 1px solid $black;
+
+			&:first-child .page-link,
+			&:last-child .page-link {
+				border-radius: 0;
+			}
+		}
+
+		.page-link {
+			background-color: $cod-gray;
+			border: 0;
+			box-shadow: none;
+			align-items: center;
+			color: $boulder;
+			display: flex;
+			font-size: rem(16px);
+			font-weight: 700;
+			justify-content: center;
+			line-height: rem(24px);
+			margin-left: 0;
+			min-height: rem(34px);
+			min-width: rem(34px);
+			outline: none;
+			overflow: hidden;
+			padding: rem(5px);
+			text-align: center;
+			transition: background-color 200ms linear, color 200ms linear;
+
+			@supports (-moz-appearance:none) {
+				padding-bottom: rem(3px);
+				padding-top: rem(7px);
+			}
+
+			@supports (-ms-ime-align:auto) {
+				padding-bottom: rem(3px);
+				padding-top: rem(7px);
+			}
+
+			svg {
+				display: block;
+				fill: $boulder;
+				height: rem(14px);
+				left: 50%;
+				margin: rem(-7px 0 0 -9px);
+				position: absolute;
+				top: 50%;
+				width: rem(18px);
+				z-index: 1;
+
+				&.normal {
+					transition: fill 200ms linear, opacity 200ms linear 100ms, transform 200ms $ease-out-cubic 100ms;
+				}
+
+				&.hover {
+					opacity: 0;
+					transition: fill 200ms linear, opacity 200ms linear, transform 200ms $ease-in-cubic;
+				}
+
+				&.left {
+					&.hover {
+						transform: translate3d(200%, 0, 0);
+					}
+				}
+
+				&.right {
+					&.hover {
+						transform: translate3d(-200%, 0, 0);
+					}
+				}
+			}
+
+			svg {
+				display: block;
+				height: rem(14px);
+				transition: fill 200ms linear;
+				width: rem(18px);
+			}
+
+			&:hover {
+				background-color: $night-rider;
+				color: $white;
+
+				svg {
+					fill: $white;
+
+					&.normal {
+						opacity: 0;
+						transition: fill 200ms linear, opacity 200ms linear, transform 200ms $ease-in-cubic;
+					}
+
+					&.hover {
+						opacity: 1;
+						transform: translate3d(0, 0, 0);
+						transition: fill 200ms linear, opacity 200ms linear 100ms, transform 200ms $ease-out-cubic 100ms;
+					}
+
+					&.left,
+					&.right {
+						&.hover {
+							transform: translate3d(0, 0, 0);
+						}
+					}
+
+					&.left {
+						&.normal {
+							transform: translate3d(-200%, 0, 0);
+						}
+					}
+
+					&.right {
+						&.normal {
+							transform: translate3d(200%, 0, 0);
+						}
+					}
+				}
+			}
+		}
+
+		span.page-link {
+			background-color: $white-smoke;
+			color: $nero;
+
+			&:hover {
+				background-color: $white-smoke;
+				color: $nero;
+
+				svg {
+					fill: $nero;
+				}
+			}
+		}
+	}
+}

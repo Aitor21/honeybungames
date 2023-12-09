@@ -1,0 +1,57 @@
+.has-js {
+	.scroll-appear {
+		&-fade-in {
+			opacity: 0;
+			transition: opacity 300ms linear;
+		}
+
+		&-fade-in-move-up {
+			backface-visibility: hidden;
+			opacity: 0;
+			transform: translate3d(0, 30px, 0);
+			transition: opacity 300ms linear, transform 300ms $ease-out-cubic;
+		}
+	}
+
+	.is-anim-ready {
+		.scroll-appear-is-inview {
+			&.scroll-appear,
+			.scroll-appear {
+				&-fade-in {
+					opacity: 1;
+				}
+
+				&-fade-in-move-up {
+					opacity: 1;
+					transform: translate3d(0, 0, 0);
+				}
+
+				&-delay {
+					&-100 {
+						transition-delay: 100ms;
+					}
+
+					&-200 {
+						transition-delay: 200ms;
+					}
+
+					&-300 {
+						transition-delay: 300ms;
+					}
+
+					&-400 {
+						transition-delay: 400ms;
+					}
+
+					&-500 {
+						transition-delay: 500ms;
+					}
+
+					&-600 {
+						transition-delay: 500ms;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,49 @@
+.has-js {
+	.c-loading {
+		backface-visibility: hidden;
+		background-color: $cod-gray;
+		background-position: 50% 0;
+		background-repeat: repeat;
+		@include img-retina('../images/bg-pattern.png', '../images/bg-pattern-2x.png', 204px, 196px);
+		bottom: 0;
+		cursor: wait;
+		left: 0;
+		opacity: 1;
+		position: fixed;
+		right: 0;
+		top: 0;
+		transition: opacity 200ms linear, visibility 0s linear 200ms;
+		visibility: visible;
+		z-index: 999999;
+
+		img {
+			display: block;
+			height: 90px;
+			left: 50%;
+			margin: -45px 0 0 -45px;
+			position: absolute;
+			top: 50%;
+			width: 90px;
+			z-index: 1;
+		}
+	}
+
+	.dom-is-loaded,
+	.page-is-loaded {
+		.c-loading {
+			opacity: 0;
+			transition: opacity 200ms linear, visibility 0s linear 200ms;
+			visibility: hidden;
+		}
+	}
+
+
+	.is-loading,
+	.is-changing-page {
+		.c-loading {
+			opacity: 1;
+			transition: opacity 200ms linear;
+			visibility: visible;
+		}
+	}
+}

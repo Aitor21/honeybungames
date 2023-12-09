@@ -1,0 +1,231 @@
+body,
+input,
+select,
+button,
+textarea {
+	-moz-osx-font-smoothing:grayscale;
+	-webkit-font-smoothing:antialiased;
+}
+
+body {
+	background-color: $black;
+	font-family: $font-base;
+	min-width:320px;
+	text-rendering:optimizeLegibility;
+	position: relative;
+	width:100%;
+}
+
+img {
+	aspect-ratio: auto;
+}
+
+#site-wrapper {
+	overflow:hidden;
+	width:100%;
+}
+
+.barba-container + .barba-container {
+	opacity: 0 !important;
+	visibility: hidden !important;
+}
+
+.grecaptcha-badge {
+	display: none !important;
+}
+
+a,
+button {
+	outline:none;
+
+	&:focus,
+	&:active {
+		outline:none;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: normal;
+}
+
+h1,
+.h1 {
+	color: $white;
+}
+
+.editor {
+	a {
+		color: $white;
+		font-weight: 700;
+
+		&:hover {
+
+		}
+	}
+
+	h2,
+	.h2 {
+		color: $white;
+		font: 500 1.625rem/1.875rem $font-base-condensed; /* 26/16 30/26 */
+		letter-spacing: rem(1px);
+		margin-bottom: rem(20px);
+		text-transform: uppercase;
+	}
+
+	h3,
+	.h3 {
+
+	}
+
+	h4,
+	.h4 {
+
+	}
+
+	h5,
+	.h5 {
+
+	}
+
+	h6,
+	.h6 {
+
+	}
+
+	p,
+	.p {
+		color: $nobel;
+		font-size: rem(15px);
+		letter-spacing: rem(0.25px);
+		line-height: rem(23px);
+		margin-bottom: rem(23px);
+	}
+
+	blockquote {
+		> *:last-child {
+			margin-bottom:0;
+		}
+	}
+
+	ul,
+	ol {
+		li + li {
+
+		}
+
+		ul,
+		ol {
+
+		}
+	}
+
+	ul {
+		> li {
+
+		}
+	}
+
+	ol {
+
+	}
+
+	figure {
+		max-width:100%;
+	}
+
+	img {
+		display:block;
+		height:auto;
+		margin-bottom:20px;
+		max-width:100%;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom:30px;
+		}
+
+		&.alignleft {
+			@include media-breakpoint-up(sm) {
+				float:left;
+				margin-right:20px;
+			}
+
+			@include media-breakpoint-up(md) {
+				margin-right:30px;
+			}
+		}
+
+		&.aligncenter {
+			margin-left:auto;
+			margin-right:auto;
+		}
+
+		&.alignright {
+			@include media-breakpoint-up(sm) {
+				float:right;
+				margin-left:20px;
+			}
+
+			@include media-breakpoint-up(md) {
+				margin-left:30px;
+			}
+		}
+	}
+
+	hr {
+		border-top: 1px solid $night-rider-light;
+		margin: 2.3rem 0;
+	}
+
+	> p:last-child,
+	> .p:last-child,
+	> ul:last-child,
+	> ol:last-child,
+	> blockquote:last-child {
+		margin-bottom:0;
+	}
+}
+
+.single-communique_de_presse,
+.single-notices,
+.page-id-2820,
+.page-id-2822 {
+	.editor {
+		color: $very-light-gray;
+
+		a {
+			color: $very-light-gray;
+			font-weight: 400;
+			text-decoration: underline;
+			transition: color 200ms linear;
+
+			&:hover {
+				color: $white;
+			}
+		}
+
+		h2,
+		.h2 {
+			margin-bottom: 1rem;
+		}
+
+		p,
+		.p {
+			font-size: 1.1rem;
+			letter-spacing: normal;
+			line-height: 1.5em;
+
+			@include media-breakpoint-up(lg) {
+				font-size: rem(16px);
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 1.2rem;
+			}
+		}
+	}
+}

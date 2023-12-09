@@ -1,0 +1,23 @@
+.c-scroll-overflow {
+	&-wrapper {
+		margin-right: -30px;
+		overflow: hidden;
+
+		@include media-breakpoint-up(md) {
+			margin-right: 0;
+			overflow: visible;
+		}
+	}
+	
+	&-track {
+		margin-bottom: rem(-20px);
+		overflow-x: scroll;
+		padding-bottom: rem(20px);
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: 0;
+			overflow-x: visible;
+			padding-bottom: 0;
+		}
+	}
+}
