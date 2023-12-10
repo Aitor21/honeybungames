@@ -1628,7 +1628,7 @@ __NUXT_JSONP__(
                       translated_slugs: [],
                     },
                     {
-                      name: "Love at fist Bite",
+                      name: "Superbrothers: Sword & Sworcery EP",
                       created_at: "2022-01-20T13:12:01.090Z",
                       published_at: "2022-05-12T12:55:29.783Z",
                       alternates: [],
@@ -1756,7 +1756,7 @@ __NUXT_JSONP__(
                                       type: d,
                                       content: [
                                         {
-                                          text: "Vampire Bites. ",
+                                          text: "Superbrothers: Sword & Sworcery EP is an exploratory action adventure with an emphasis on audiovisual style. Traverse a mythic little realm, use a sword to do battle & evoke sworcery to solve mystical musical mysteries. ",
                                           type: e,
                                           marks: [
                                             { type: f, attrs: { class: a } },
@@ -1777,7 +1777,7 @@ __NUXT_JSONP__(
                                   copyright: a,
                                   fieldtype: c,
                                 },
-                                title: "Blaster Buds",
+                                title: "Sword & Sworcery EP?",
                                 component: i,
                                 small_heading: s,
                               },
@@ -1790,7 +1790,7 @@ __NUXT_JSONP__(
                                       type: d,
                                       content: [
                                         {
-                                          text: " Puzzle Game",
+                                          text: "Guide a warrior monk on a laid back adventure in a bronze age mountain wilderness, overcome occasionally hard-hitting battles & solve mystical musical puzzles to help The Scythian complete her woeful errand.",
                                           type: e,
                                           marks: [
                                             { type: f, attrs: { class: a } },
@@ -1802,7 +1802,7 @@ __NUXT_JSONP__(
                                       type: d,
                                       content: [
                                         {
-                                          text: "Shoot him. Don't get shot. ",
+                                          text: "Superbrothers: Sword & Sworcery EP features an album's worth of original music by noted composer Jim Guthrie as well as artwork & designs by Superbrothers Inc, crafted & engineered by video game wizards at Capy.",
                                           type: e,
                                           marks: [
                                             { type: f, attrs: { class: a } },
@@ -1823,7 +1823,7 @@ __NUXT_JSONP__(
                                   copyright: a,
                                   fieldtype: c,
                                 },
-                                title: "Victor's Mayhem",
+                                title: "Musical Mysteries",
                                 component: i,
                                 small_heading: j,
                               },
@@ -1839,7 +1839,7 @@ __NUXT_JSONP__(
                                       type: d,
                                       content: [
                                         {
-                                          text: "Spin the wheel of fortune. ",
+                                          text: "A fevered famicom dream. Explore a lavishly-painted mythopoetic storyworld affected by real-world moon phases, conceived & crafted by a representative at Superbrothers Inc",
                                           type: e,
                                           marks: [
                                             { type: f, attrs: { class: a } },
@@ -1860,7 +1860,7 @@ __NUXT_JSONP__(
                                   copyright: a,
                                   fieldtype: c,
                                 },
-                                title: "R4D10 H34D",
+                                title: "Lush Environment",
                                 component: i,
                                 small_heading: j,
                               },
@@ -1873,7 +1873,7 @@ __NUXT_JSONP__(
                                       type: d,
                                       content: [
                                         {
-                                          text: "Survive",
+                                          text: "Sworcery's wry writing style is a mix of evocative, mythic prose and internet dialect circa 2011, and there are concepts in the story & gameplay that connected to then-relatively-new Twitter platform.",
                                           type: e,
                                           marks: [
                                             { type: f, attrs: { class: a } },
