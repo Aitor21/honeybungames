@@ -1,0 +1,13 @@
+.template-home_10b {
+  position: relative;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  --un-border-opacity: 1;
+  border-color: rgba(22, 27, 50, var(--un-border-opacity));
+  padding: var(--space-m-l);
+  text-align: center;
+}
+.template-home_10b .--type-text-play {
+  font-weight: 72;
+}
