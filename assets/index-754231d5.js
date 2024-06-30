@@ -15256,7 +15256,7 @@ const Kx = {
           '{"xs":362,"sm":640,"md":768,"lg":1024,"xl":1280,"2xl":1537,"3xl":1740}'
         ),
         o = JSON.parse(
-          '{"body":"#EFA332","default":"#161B32","navy":{"1":"#1D2951","DEFAULT":"#161B32"},"grey":{"1":"#BEBACC","2":"#9F9AAB","3":"#767182","DEFAULT":"#E3E1E9"},"pink":{"1":"#F6B7D0","2":"#E77BAE","3":"#991356","DEFAULT":"#F9CFE0"},"blue":{"1":"#7FC2EC","2":"#009FE3","3":"#204999","DEFAULT":"#A1D9F7"},"green":{"1":"#A5D09D","2":"#5DAC72","3":"#1A692F","DEFAULT":"#C2DFBF"},"purple":{"1":"#BA86BA","2":"#974292","3":"#5D2260","DEFAULT":"#CAA5CE"},"orange":{"1":"#F6AD81","2":"#EF7A45","3":"#9A3115","DEFAULT":"#FAC49E"},"yellow":{"1":"#FFD77B","2":"#F0A208","3":"#B26616","DEFAULT":"#FFED9B"},"red":{"1":"#F2979B","2":"#EA4E57","3":"#B83533","DEFAULT":"#F5B0B3"}}'
+          '{"body":"#EFA332","default":"#1E2830","navy":{"1":"#1D2951","DEFAULT":"#1E2830"},"grey":{"1":"#BEBACC","2":"#9F9AAB","3":"#767182","DEFAULT":"#E3E1E9"},"pink":{"1":"#F6B7D0","2":"#E77BAE","3":"#991356","DEFAULT":"#F9CFE0"},"blue":{"1":"#7FC2EC","2":"#009FE3","3":"#204999","DEFAULT":"#A1D9F7"},"green":{"1":"#A5D09D","2":"#5DAC72","3":"#1A692F","DEFAULT":"#C2DFBF"},"purple":{"1":"#BA86BA","2":"#974292","3":"#5D2260","DEFAULT":"#CAA5CE"},"orange":{"1":"#F6AD81","2":"#EF7A45","3":"#9A3115","DEFAULT":"#FAC49E"},"yellow":{"1":"#FFD77B","2":"#F0A208","3":"#B26616","DEFAULT":"#FFED9B"},"red":{"1":"#F2979B","2":"#EA4E57","3":"#B83533","DEFAULT":"#F5B0B3"}}'
         ),
         i = {
           observer: null,

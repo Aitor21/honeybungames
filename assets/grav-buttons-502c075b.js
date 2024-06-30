@@ -2177,7 +2177,7 @@ var We = { exports: {} };
               var g = {
                 visible: !0,
                 lineWidth: 2,
-                strokeStyle: "#ffffff",
+                strokeStyle: "#EFA332",
                 type: "line",
                 anchors: !0,
               };

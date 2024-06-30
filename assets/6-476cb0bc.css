@@ -558,7 +558,7 @@
   border-width: 10px;
   --un-border-opacity: 1;
   border-color: rgba(240, 162, 8, var(--un-border-opacity));
-  background-color: #161b32e6;
+  background-color: #1E2830e6;
   --un-backdrop-blur: blur(2px);
   -webkit-backdrop-filter: var(--un-backdrop-blur) var(--un-backdrop-brightness)
     var(--un-backdrop-contrast) var(--un-backdrop-grayscale)
@@ -789,7 +789,7 @@
 .template-home_6_modal-enter-from .template-home_6_modal-bg,
 .template-home_6_modal-leave-to .template-home_6_modal-bg {
   border-width: 0;
-  background-color: #161b3200;
+  background-color: #1E283000;
   --un-backdrop-blur: blur(0);
   -webkit-backdrop-filter: var(--un-backdrop-blur) var(--un-backdrop-brightness)
     var(--un-backdrop-contrast) var(--un-backdrop-grayscale)

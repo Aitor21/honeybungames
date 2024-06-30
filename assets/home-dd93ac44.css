@@ -325,7 +325,7 @@
     rotateY(var(--un-rotate-y)) rotate(var(--un-rotate-z))
     skew(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x))
     scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));
-  background-color: #161b32d9;
+  background-color: #1E2830d9;
   opacity: 0;
   --un-backdrop-blur: blur(0.2px);
   -webkit-backdrop-filter: var(--un-backdrop-blur) var(--un-backdrop-brightness)
