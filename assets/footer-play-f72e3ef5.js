@@ -177,7 +177,7 @@ const R = {
   },
   U = { class: "template-home_footer-play" },
   Y = { class: "" },//"template-home_footer-play_title" },
-  j = { class: "--type-alttitle-play" },
+  j = { class: "" },//"--type-alttitle-play" },
   q = { class: "" },//"template-home_footer-play_middle" },
   J = ["innerHTML"],
   K = { class: "template-home_footer-play_bottom" },
