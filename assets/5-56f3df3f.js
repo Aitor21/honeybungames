@@ -63,7 +63,7 @@ function I(t, m, R, j, h, o) {
                   e(
                     "h4",
                     {
-                      class: "--type-subtitle-play --type-cms",
+                      class: "",
                       innerHTML: o.content.title_play,
                     },
                     null,
