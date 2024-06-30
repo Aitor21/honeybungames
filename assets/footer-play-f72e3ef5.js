@@ -186,7 +186,7 @@ const R = {
     '<div class=""><span class="bg-pink"></span><span class="bg-blue"></span><span class="bg-green"></span><span class="bg-purple"></span><span class="bg-orange"></span><span class="bg-yellow"></span><span class="bg-red"></span></div>',
     1
   );
-function Q(t, l, v, e, r) {
+function Q(t, l, v, g, e, r) {
   const n = c(""),
     F = c("part-grav-buttons"),
     i = h("orphans"),
@@ -203,7 +203,7 @@ function Q(t, l, v, e, r) {
         "div",
         {
           class: b([
-            //"template-home_footer-play_top",
+            "template-home_footer-play_top",
             { "--hover": e.logo.hover },
           ]),
         },
