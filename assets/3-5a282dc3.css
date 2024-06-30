@@ -310,7 +310,7 @@
     var(--un-drop-shadow) var(--un-grayscale) var(--un-hue-rotate)
     var(--un-invert) var(--un-saturate) var(--un-sepia);
 }
-.template-home_3_media .ui-cursor_follow svg {
+/*.template-home_3_media .ui-cursor_follow svg {
   width: 4em;
   height: 4em;
   transform: translate3d(
@@ -342,7 +342,7 @@
     rotate(var(--un-rotate-z)) skew(var(--un-skew-x)) skewY(var(--un-skew-y))
     scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y))
     scaleZ(var(--un-scale-z));
-}
+}*/
 .template-home_3_coin {
   pointer-events: none;
   position: absolute;

@@ -93,7 +93,7 @@ const w = {
     key: "shape-11",
     d: "M61 6h50v37l32-18 25 43-32 19 32 18-25 43-32-18v37H61v-37l-32 18-25-43 32-18L4 68l25-43 32 18Z",
   };
-function $(t, l, v, e, r) {
+/*function $(t, l, v, e, r) {
   return (
     o(),
     s(
