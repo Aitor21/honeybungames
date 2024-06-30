@@ -107,7 +107,7 @@ function $(t, l, v, e, r) {
         xmlns: "",
         "aria-label": "",
 
-        /onClick:
+        onClick:
           l[0] || (l[0] = (...n) => r.logoClicked && r.logoClicked(...n)),
         onMouseenter: l[1] || (l[1] = (n) => t.$emit("hover", !0)),
         onMouseleave: l[2] || (l[2] = (n) => t.$emit("hover", !1)),
