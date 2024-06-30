@@ -2750,7 +2750,7 @@ function zn(e, t, n, s = !0) {
   AT(e, n, r, s);
 }
 function AT(e, t, n, s = !0) {
-  //console.error(e);
+  console.error(e);
 }
 let lr = !1,
   el = !1;
@@ -14981,7 +14981,7 @@ const Kx = {
           ((c.rel = i ? "stylesheet" : zx),
           i || ((c.as = "script"), (c.crossOrigin = "")),
           (c.href = o),
-          //document.head.appendChild(c),
+          document.head.appendChild(c),
           i)
         )
           return new Promise((u, f) => {
