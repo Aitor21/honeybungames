@@ -18,7 +18,7 @@ import { r as _ } from "./home-52e6e4d5.js";
 import { p as M } from "./grav-buttons-502c075b.js";
 import "./filter-b9302deb.js";
 const w = {
-    name: "SVGWonderLogo",
+    name: "",
     data() {
       return { gradient: 0, shape: 0, interval: null };
     },
@@ -100,12 +100,12 @@ function $(t, l, v, g, e, r) {
       "svg",
       {
         role: "img",
-        class: "svg-wonder-logo",
+        class: "",
         viewBox: "0 0 640 100",
         preserveAspectRatio: "xMinYMin meet",
         fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        "aria-label": "Wondermake",
+        xmlns: "",
+        "aria-label": "",
         onClick:
           l[0] || (l[0] = (...n) => r.logoClicked && r.logoClicked(...n)),
         onMouseenter: l[1] || (l[1] = (n) => t.$emit("hover", !0)),
@@ -122,7 +122,7 @@ function $(t, l, v, g, e, r) {
           [
             p(
               k,
-              { mode: "out-in", name: "svg-wonder-logo-gradient" },
+              { mode: "out-in", name: "" },
               {
                 default: Z(() => [
                   e.shape === 0
@@ -165,7 +165,7 @@ function $(t, l, v, g, e, r) {
 }
 const z = m(w, [["render", $]]);
 const R = {
-    components: { "svg-wonder-logo": z, "part-grav-buttons": M },
+    components: { "": z, "part-grav-buttons": M },
     data() {
       return { logo: { hover: !1 } };
     },
@@ -186,7 +186,7 @@ const R = {
     1
   );
 function Q(t, l, v, g, e, r) {
-  const n = c("svg-wonder-logo"),
+  const n = c(""),
     F = c("part-grav-buttons"),
     i = h("orphans"),
     u = h("nl2br");
