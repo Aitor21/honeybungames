@@ -97,19 +97,20 @@ function $(t, l, v, g, e, r) {
   return (
     o(),
     s(
-      "svg",
-      {
-        role: "img",
-        class: "",
-        viewBox: "0 0 640 100",
-        preserveAspectRatio: "xMinYMin meet",
-        fill: "none",
-        xmlns: "",
-        "aria-label": "",
-        onClick:
-          l[0] || (l[0] = (...n) => r.logoClicked && r.logoClicked(...n)),
-        onMouseenter: l[1] || (l[1] = (n) => t.$emit("hover", !0)),
-        onMouseleave: l[2] || (l[2] = (n) => t.$emit("hover", !1)),
+      //"svg",
+      //{
+        //role: "img",
+        //class: "",
+        //viewBox: "0 0 640 100",
+        //preserveAspectRatio: "xMinYMin meet",
+        //fill: "none",
+        //xmlns: "",
+        //"aria-label": "",
+
+        //onClick:
+        //  l[0] || (l[0] = (...n) => r.logoClicked && r.logoClicked(...n)),
+        //onMouseenter: l[1] || (l[1] = (n) => t.$emit("hover", !0)),
+        //onMouseleave: l[2] || (l[2] = (n) => t.$emit("hover", !1)),
       },
       [
         L,
@@ -194,7 +195,7 @@ function Q(t, l, v, g, e, r) {
     o(),
     s("section", U, [
       a("div", Y, [
-        d((o(), s("p", j, [G(" Concept Capers is brought to you by ")])), [
+        d((o(), s("p", j, [G("")])), [
           [i],
         ]),
       ]),
