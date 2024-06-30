@@ -1,4 +1,4 @@
-.svg-wonder-logo {
+/*.svg-wonder-logo {
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
@@ -45,7 +45,7 @@
     rotate(var(--un-rotate-z)) skew(var(--un-skew-x)) skewY(var(--un-skew-y))
     scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y))
     scaleZ(var(--un-scale-z));
-}
+}*/
 .template-home_footer-play {
   position: relative;
   margin-top: var(--space-2xl-3xl);
