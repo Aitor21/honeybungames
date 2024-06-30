@@ -48,8 +48,11 @@
 }*/
 .template-home_footer-play {
   position: relative;
-  margin-top: var(--space-2xl-3xl);
-  border-width: 5px;
+  margin-top: 0/*var(--space-2xl-3xl)*/;
+  border-top: 0px;
+  border-left: 5px;
+  border-right: 5px;
+  border-bottom: 5px;
   --un-border-opacity: 1;
   border-color: rgba(22, 27, 50, var(--un-border-opacity));
 }
