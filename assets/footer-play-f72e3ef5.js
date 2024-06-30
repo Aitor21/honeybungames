@@ -97,15 +97,15 @@ function $(t, l, v, e, r) {
   return (
     o(),
     s(
-      "svg",
+      //"svg",
       {
         role: "img",
         class: "",
-        viewBox: "0 0 640 100",
-        preserveAspectRatio: "xMinYMin meet",
-        fill: "none",
+        viewBox: "0",
+        preserveAspectRatio: "",
+        fill: "",
         xmlns: "",
-        "aria-label": "",
+        //"aria-label": "",
 
         onClick:
           l[0] || (l[0] = (...n) => r.logoClicked && r.logoClicked(...n)),
@@ -186,7 +186,7 @@ const R = {
     '<div class=""><span class="bg-pink"></span><span class="bg-blue"></span><span class="bg-green"></span><span class="bg-purple"></span><span class="bg-orange"></span><span class="bg-yellow"></span><span class="bg-red"></span></div>',
     1
   );
-function Q(t, l, v, g, e, r) {
+function Q(t, l, v, e, r) {
   const n = c(""),
     F = c("part-grav-buttons"),
     i = h("orphans"),
