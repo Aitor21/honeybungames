@@ -194,7 +194,7 @@ function Q(t, l, v, g, e, r) {
     o(),
     s("section", U, [
       a("div", Y, [
-        d((o(), s("p", j, [G("")])), [
+        d((o(), s("p", j, [G(" Concept Capers is brought to you by ")])), [
           [i],
         ]),
       ]),
@@ -203,10 +203,10 @@ function Q(t, l, v, g, e, r) {
         {
           class: b([
             //"template-home_footer-play_top",
-            {},
+            { "--hover": e.logo.hover },
           ]),
         },
-        [p(n, {})],
+        [p(n, { onHover: l[0] || (l[0] = (y) => (e.logo.hover = y)) })],
         2
       ),
       a("div", q, [
