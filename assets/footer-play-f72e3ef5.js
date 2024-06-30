@@ -203,7 +203,7 @@ function Q(t, l, v, g, e, r) {
         "div",
         {
           class: b([
-            //"template-home_footer-play_top",
+            "template-home_footer-play_top",
             { "--hover": e.logo.hover },
           ]),
         },
