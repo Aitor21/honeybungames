@@ -15,7 +15,7 @@
   }
 }
 .block-table_row {
-  background-color: #161b320a;
+  background-color: #1E28300a;
 }
 @media (min-width: 768px) {
   .block-table_row {
@@ -1951,16 +1951,16 @@
   background-color: rgba(29, 41, 81, var(--un-bg-opacity));
 }
 .bg-navy\/0 {
-  background-color: #161b3200;
+  background-color: #1E283000;
 }
 .bg-navy\/04 {
-  background-color: #161b320a;
+  background-color: #1E28300a;
 }
 .bg-navy\/85 {
-  background-color: #161b32d9;
+  background-color: #1E2830d9;
 }
 .bg-navy\/90 {
-  background-color: #161b32e6;
+  background-color: #1E2830e6;
 }
 .bg-orange {
   --un-bg-opacity: 1;
