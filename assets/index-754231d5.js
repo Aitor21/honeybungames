@@ -14981,7 +14981,7 @@ const Kx = {
           ((c.rel = i ? "stylesheet" : zx),
           i || ((c.as = "script"), (c.crossOrigin = "")),
           (c.href = o),
-          document.head.appendChild(c),
+          //document.head.appendChild(c),
           i)
         )
           return new Promise((u, f) => {
