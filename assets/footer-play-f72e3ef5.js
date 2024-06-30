@@ -99,13 +99,13 @@ function $(t, l, v, e, r) {
     s(
       "svg",
       {
-        role: "",
+        role: "img",
         class: "",
-        viewBox: "0",
-        preserveAspectRatio: "",
-        fill: "",
+        viewBox: "0 0 640 100",
+        preserveAspectRatio: "xMinYMin meet",
+        fill: "none",
         xmlns: "",
-        //"aria-label": "",
+        "aria-label": "",
 
         onClick:
           l[0] || (l[0] = (...n) => r.logoClicked && r.logoClicked(...n)),
