@@ -4,7 +4,7 @@
 }
 @media (min-width: 768px) {
   .template-home_5 .--ratio {
-    min-height: 9em;
+    min-height: 0;
   }
 }
 .template-home_5_play {
@@ -14,7 +14,7 @@
   align-items: center;
   padding-left: var(--space-m-l);
   padding-right: var(--space-m-l);
-  padding-top: var(--space-l-xl);
+  padding-top: 0;
 }
 .template-home_5_play-bg {
   position: absolute;
