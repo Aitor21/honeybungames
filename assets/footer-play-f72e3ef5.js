@@ -176,13 +176,13 @@ const R = {
     },
   },
   U = { class: "template-home_footer-play" },
-  Y = { class: "template-home_footer-play_title" },
+  Y = { class: "" },//"template-home_footer-play_title" },
   j = { class: "--type-alttitle-play" },
-  q = { class: "template-home_footer-play_middle" },
+  q = { class: "" },//"template-home_footer-play_middle" },
   J = ["innerHTML"],
   K = { class: "template-home_footer-play_bottom" },
   O = f(
-    '<div class="template-home_footer-play_stripes"><span class="bg-pink"></span><span class="bg-blue"></span><span class="bg-green"></span><span class="bg-purple"></span><span class="bg-orange"></span><span class="bg-yellow"></span><span class="bg-red"></span></div>',
+    '<div class=""><span class="bg-pink"></span><span class="bg-blue"></span><span class="bg-green"></span><span class="bg-purple"></span><span class="bg-orange"></span><span class="bg-yellow"></span><span class="bg-red"></span></div>',
     1
   );
 function Q(t, l, v, g, e, r) {
@@ -202,7 +202,7 @@ function Q(t, l, v, g, e, r) {
         "div",
         {
           class: b([
-            "template-home_footer-play_top",
+            //"template-home_footer-play_top",
             { "--hover": e.logo.hover },
           ]),
         },
