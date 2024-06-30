@@ -97,9 +97,9 @@ function $(t, l, v, e, r) {
   return (
     o(),
     s(
-      //"svg",
+      "svg",
       {
-        role: "img",
+        role: "",
         class: "",
         viewBox: "0",
         preserveAspectRatio: "",
