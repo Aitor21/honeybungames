@@ -14860,11 +14860,6 @@ const Kx = {
               d(r.cached[f]);
             });
           const p = c.version ? c.url + "?v=" + c.version : c.url;
-          return fetch(p, {
-            method: c.method,
-            headers: c.headers,
-            body: c.body,
-          })
             .then(
               (d) =>
                 new Promise((h) =>
