@@ -916,7 +916,7 @@ const N4 = {
   G4 = l(
     "div",
     { class: "--title" },
-    [l("h1", { class: "--type-title-play" }, "Honey Bun Games")],
+    [l("h1", { class: "--type-title-play" }, "Concept Capers!")],
     -1
   ),
   X4 = { class: "--cards" },
@@ -925,7 +925,7 @@ const N4 = {
   U4 = ["innerHTML"],
   W4 = { class: "template-home_1_work --flex-col" },
   J4 = { class: "--title" },
-  K4 = l("p", null, "A Honey Bun Games", -1),
+  K4 = l("p", null, "A Concept Capers Company", -1),
   z4 = { class: "--cards" },
   e5 = { class: "--content" },
   t5 = ["innerHTML"],
