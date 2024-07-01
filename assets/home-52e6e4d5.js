@@ -459,6 +459,12 @@ const f4 = {
         t.scrolled && Math.abs(t.scrolled - e) > 250 && t.setBrand();
       },
     },
+    e._api
+  .query({ post_type: t, fields: ["title", "content.details."] })
+  .then((res) => {
+    e.items = res.data;
+    console.log('Items:', e.items); // Debugging
+  });
     methods: {
       init() {
         const e = this,
