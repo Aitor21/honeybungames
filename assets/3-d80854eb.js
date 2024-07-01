@@ -395,7 +395,7 @@ function M1(e, s, o, n, a, l) {
                       "img",
                       {
                         src: e._image("play-coin.svg"),
-                        alt: "Concept Capers Coin",
+                        alt: "HBG Coin",
                         width: "358",
                         height: "358",
                       },
@@ -411,7 +411,7 @@ function M1(e, s, o, n, a, l) {
                       "img",
                       {
                         src: e._image("work-coin.png"),
-                        alt: "Overbrand Coin",
+                        alt: "Honeybun Coin",
                         width: "358",
                         height: "358",
                       },
