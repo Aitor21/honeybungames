@@ -14860,49 +14860,6 @@ const Kx = {
               d(r.cached[f]);
             });
           const p = c.version ? c.url + "?v=" + c.version : c.url;
-            .then(
-              (d) =>
-                new Promise((h) =>
-                  setTimeout(() => {
-                    h(d);
-                  }, c.delay)
-                )
-            )
-            .then((d) =>
-              d.text().then((h) => {
-                let y;
-                try {
-                  let E = JSON.parse(h);
-                  E && typeof E == "object" && (y = E);
-                } catch {
-                  return Promise.reject({ message: h, status: 500 });
-                }
-                return d.ok
-                  ? (ht(
-                      {
-                        call: c,
-                        api: y,
-                        response: d,
-                        time: Date.now() - u + "ms",
-                      },
-                      "API"
-                    ),
-                    y.data ? { ...y.data } : { ...y })
-                  : Promise.reject({
-                      message: De(y, "data.error") || d.statusText || "Error",
-                      status: De(y, "data.status") || d.status || 500,
-                    });
-              })
-            )
-            .then(
-              (d) => (
-                c.format && (d = c.format(d)), c.cached && (r.cached[f] = d), d
-              )
-            )
-            .catch((d) => {
-              const h = d.message || d.statusText || "Error",
-                y = d.status || 500;
-              return ht(h, y), Promise.reject({ message: h, status: y });
             });
         },
         block(l) {
