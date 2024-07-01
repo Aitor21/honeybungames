@@ -14860,7 +14860,6 @@ const Kx = {
               d(r.cached[f]);
             });
           const p = c.version ? c.url + "?v=" + c.version : c.url;
-            });
         },
         block(l) {
           const a = {};
