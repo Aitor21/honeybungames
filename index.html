@@ -412,7 +412,7 @@
       </main>
     </div>
     <script>
-    window.$ssr = `{
+    window.$ssr = {
       "options": {
         "site_title": "Honey Bun Games",
         "site_desc": "Swipe, Match, Savor <br> The game where romance meets dining decisions",
@@ -447,7 +447,14 @@
         "site_url": "https://honeybungames.com/",
         "cdn_url": "",
         "fathom_site_id": "OLGLUWLF",
-        "links": "LinkedIn | https://uk.linkedin.com/company/HoneyBunGames\nEmail | mailto:hello@aitormorales.com\n#MakeCreativityMatter | https://www.change.org/p/make-creativity-matter\nInstagram | https://instagram.com/honeybungames\nTwitter | https://twitter.com/HoneyBunGames\nIdeas Foundation | https://www.HoneyBunGames.com/",
+        "links": {
+          "LinkedIn": "https://uk.linkedin.com/company/HoneyBunGames",
+          "Email": "mailto:hello@aitormorales.com",
+          "#MakeCreativityMatter": "https://www.change.org/p/make-creativity-matter",
+          "Instagram": "https://instagram.com/honeybungames",
+          "Twitter": "https://twitter.com/HoneyBunGames",
+          "Ideas Foundation": "https://www.HoneyBunGames.com/"
+        },
         "link_font": {
           "text": "Itch.io",
           "path": "https://www.HoneyBunGames.com/hughie",
@@ -463,7 +470,14 @@
           "post_type": false
         },
         "copyright": "HoneyBunGames Ltd",
-        "straplines": "Let’s make something award winning\nLet’s make something award winning\nLet’s make something that people love\nLet’s make something with insight & imagination\nLet’s make something come to life\nLet’s make something that builds a better world\nLet’s make something you can’t stop looking at",
+        "straplines": [
+          "Let’s make something award winning",
+          "Let’s make something that people love",
+          "Let’s make something with insight & imagination",
+          "Let’s make something come to life",
+          "Let’s make something that builds a better world",
+          "Let’s make something you can’t stop looking at"
+        ],
         "strapline": ""
       },
       "menus": {
@@ -660,7 +674,7 @@
           }
         }
       }
-    }`
+    };
     </script>
   </body>
 </html>
