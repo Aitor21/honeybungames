@@ -293,24 +293,34 @@
     });
   }
 
-  // Marquee that speeds up with scroll velocity.
+  // Marquee: an endless right-to-left loop that speeds up while you scroll.
+  // It clones its group until the screen is covered, so wide displays never show a gap.
   const marquee = $('.marquee');
   if (marquee && !reduceMotion) {
     const track = $('.marquee__track', marquee);
+    const first = $('.marquee__group', track);
     root.classList.add('js-marquee');
-    let x = 0, boost = 0, prevY = scrollY, last = performance.now(), visible = false, hover = false, raf = 0;
-    let half = track.scrollWidth / 2;
-    addEventListener('resize', () => { half = track.scrollWidth / 2; }, { passive: true });
+    let x = 0, unit = 0, boost = 0, prevY = scrollY, last = performance.now(), visible = false, hover = false, raf = 0;
+    const fill = () => {
+      unit = first.offsetWidth;
+      if (!unit) return;
+      while (track.children.length * unit < innerWidth + unit * 2) {
+        const copy = first.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        track.append(copy);
+      }
+    };
+    fill();
+    if (document.fonts) document.fonts.ready.then(fill);
+    addEventListener('resize', fill, { passive: true });
     const loop = (now) => {
       const dt = Math.min(64, now - last);
       last = now;
-      const dy = scrollY - prevY;
+      boost = boost * 0.92 + Math.abs(scrollY - prevY) * 0.08;
       prevY = scrollY;
-      boost = boost * 0.92 + Math.abs(dy) * 0.08;
-      const speed = (hover ? 0.015 : 0.05) + Math.min(boost * 0.05, 1.2);
-      x -= speed * dt * (dy < 0 ? -0.35 : 1);
-      if (x <= -half) x += half;
-      if (x > 0) x -= half;
+      const speed = (hover ? 0.02 : 0.06) + Math.min(boost * 0.05, 1.2);
+      x -= speed * dt;
+      if (unit) while (x <= -unit) x += unit;
       track.style.transform = `translate3d(${x.toFixed(2)}px, 0, 0)`;
       raf = visible ? requestAnimationFrame(loop) : 0;
     };
