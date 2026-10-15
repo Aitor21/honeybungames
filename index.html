@@ -143,10 +143,15 @@
     <symbol id="i-out" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M8 16 16 8m-7 0h7v7"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.2 0 3.7 1.3 4.6 2.6.3.4 1 .4 1.3 0 .9-1.3 2.4-2.6 4.6-2.6 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21Z"/></symbol>
     <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5c.5 4.6 2.9 7 9.5 9.5-6.6 2.5-9 4.9-9.5 9.5-.5-4.6-2.9-7-9.5-9.5 6.6-2.5 9-4.9 9.5-9.5Z"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.5c3.6 4.4 6.5 8.2 6.5 11.6A6.5 6.5 0 0 1 5.5 14.1C5.5 10.7 8.4 6.9 12 2.5Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4.5"/><path d="M3.5 21a8.5 8.5 0 0 1 17 0Z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M12 3 2.5 11h2.7v9.5h5.3v-6h3v6h5.3V11h2.7Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></symbol>
     <symbol id="i-trophy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 21h8m-4-4v4m-5-17h10v5a5 5 0 0 1-10 0V4Zm0 2H4v1a3 3 0 0 0 3 3m10-4h3v1a3 3 0 0 1-3 3"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
 
   <header class="site-header" data-header>
     <div class="site-header__inner">
@@ -156,6 +161,7 @@
 
       <nav class="nav" aria-label="Main">
         <ul class="nav__links">
+          <li><a href="#swipe">Play</a></li>
           <li><a href="#games">Games</a></li>
           <li><a href="#studio">Studio</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -183,6 +189,7 @@
   <div class="mobile-menu" id="mobile-menu" data-menu hidden>
     <nav aria-label="Mobile">
       <ul class="mobile-menu__links">
+        <li><a href="#swipe">Play</a></li>
         <li><a href="#games">Games</a></li>
         <li><a href="#studio">Studio</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -207,6 +214,8 @@
         <source type="image/avif" srcset="assets/img/hero/hearts-1000.avif 1000w, assets/img/hero/hearts-1800.avif 1800w" sizes="110vw">
         <img src="assets/img/hero/hearts-1000.webp" srcset="assets/img/hero/hearts-1000.webp 1000w, assets/img/hero/hearts-1800.webp 1800w" sizes="110vw" width="1800" height="1267" alt="" fetchpriority="high">
       </picture>
+
+      <div class="hero__float" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
       <div class="hero__phone hero__phone--vampire" aria-hidden="true">
         <picture>
@@ -248,14 +257,88 @@
       <div class="marquee__track">
         <span>Love at First Bite</span><svg class="i"><use href="#i-heart"/></svg>
         <span>Indie games from Madrid</span><svg class="i"><use href="#i-star"/></svg>
-        <span>Swipe right on danger</span><svg class="i"><use href="#i-heart"/></svg>
+        <span>Fangs for stopping by</span><svg class="i"><use href="#i-heart"/></svg>
         <span>Made with honey</span><svg class="i"><use href="#i-star"/></svg>
         <span>Love at First Bite</span><svg class="i"><use href="#i-heart"/></svg>
         <span>Indie games from Madrid</span><svg class="i"><use href="#i-star"/></svg>
-        <span>Swipe right on danger</span><svg class="i"><use href="#i-heart"/></svg>
+        <span>Fangs for stopping by</span><svg class="i"><use href="#i-heart"/></svg>
         <span>Made with honey</span><svg class="i"><use href="#i-star"/></svg>
       </div>
     </div>
+
+    <!-- Mini demo: a playable taste of Love at First Bite's swipe loop -->
+    <section class="swipe" id="swipe" aria-labelledby="swipe-title">
+      <div class="swipe__glow" aria-hidden="true"></div>
+      <div class="container swipe__grid">
+        <div class="swipe__copy">
+          <p class="eyebrow eyebrow--pink" data-reveal>Mini demo · Love at First Bite</p>
+          <h2 class="display swipe__title" id="swipe-title" data-reveal data-split>Who’s on the menu tonight?</h2>
+          <p class="lead" data-reveal>You’re a vampire on a dating app. Swipe right on humans to quench your thirst, and swipe left on anyone who seems a little too… immortal.</p>
+          <ol class="swipe__how" data-reveal>
+            <li><span class="swipe__num">1</span><span><strong>Read the profile.</strong> Bios are full of clues.</span></li>
+            <li><span class="swipe__num">2</span><span><strong>Drag the card</strong> or tap <em>Yum</em> / <em>Yuck</em>. Arrow keys work too.</span></li>
+            <li><span class="swipe__num">3</span><span><strong>Keep your thirst up</strong> until sunrise.</span></li>
+          </ol>
+          <p class="swipe__note" data-reveal>A tiny taste. The full game has dates, chats, endings and a lot more teeth.</p>
+        </div>
+
+        <div class="phone" data-swipe data-reveal>
+          <div class="phone__screen">
+            <div class="app-top">
+              <p class="app-night">Night <b data-night>1</b></p>
+              <span class="app-home" aria-hidden="true"><svg class="i"><use href="#i-home"/></svg></span>
+              <div class="app-thirst">
+                <svg class="i app-thirst__drop" aria-hidden="true"><use href="#i-drop"/></svg>
+                <div class="app-thirst__bar" role="meter" aria-label="Thirst" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" data-thirst><span style="--t:.5"></span></div>
+              </div>
+              <div class="app-queue" aria-hidden="true" data-queue></div>
+            </div>
+
+            <div class="deck" data-deck tabindex="0" aria-label="Dating profiles. Press the right arrow to swipe right, left arrow to swipe left.">
+              <article class="pcard" data-human="false">
+                <div class="pcard__photo"><picture><source type="image/avif" srcset="assets/img/swipe/damian.avif"><img src="assets/img/swipe/damian.webp" width="600" height="750" alt="Damian: pale, pointed ears, red eyes, holding a glass of red wine" loading="lazy" decoding="async" draggable="false"></picture></div>
+                <span class="stamp stamp--yum" aria-hidden="true">♥ Yum! ♥</span><span class="stamp stamp--yuck" aria-hidden="true">✕ Yuck ✕</span>
+                <div class="pcard__info"><h3 class="pcard__name">Damian, 27<span class="pcard__ish">-ish</span></h3><p class="pcard__pro">He/Him</p><p class="pcard__about">About</p><p class="pcard__bio">Wine connoisseur and certified night owl. Allergic to garlic bread, mirrors and mornings. Let’s grab a drink. You bring yourself.</p></div>
+              </article>
+              <article class="pcard" data-human="true">
+                <div class="pcard__photo"><picture><source type="image/avif" srcset="assets/img/swipe/william.avif"><img src="assets/img/swipe/william.webp" width="536" height="670" alt="William: leopard-print hair, big smile, brown turtleneck and overalls" loading="lazy" decoding="async" draggable="false"></picture></div>
+                <span class="stamp stamp--yum" aria-hidden="true">♥ Yum! ♥</span><span class="stamp stamp--yuck" aria-hidden="true">✕ Yuck ✕</span>
+                <div class="pcard__info"><h3 class="pcard__name">William</h3><p class="pcard__pro">He/Him</p><p class="pcard__about">About</p><p class="pcard__bio">I have a playlist for every occasion and a love for discovering new sounds. Let’s find our favorite tracks and dance the night away.</p></div>
+              </article>
+              <article class="pcard" data-human="false">
+                <div class="pcard__photo"><picture><source type="image/avif" srcset="assets/img/swipe/viktor.avif"><img src="assets/img/swipe/viktor.webp" width="524" height="656" alt="Viktor: black hair, nose ring, cross earring, flower-print shirt" loading="lazy" decoding="async" draggable="false"></picture></div>
+                <span class="stamp stamp--yum" aria-hidden="true">♥ Yum! ♥</span><span class="stamp stamp--yuck" aria-hidden="true">✕ Yuck ✕</span>
+                <div class="pcard__info"><h3 class="pcard__name">Viktor, 26</h3><p class="pcard__pro">He/Him</p><p class="pcard__about">About</p><p class="pcard__bio">Looking for someone who doesn’t mind the occasional late-night bite. Let’s skip the small talk and dive right into the main course.</p></div>
+              </article>
+              <article class="pcard" data-human="true">
+                <div class="pcard__photo"><picture><source type="image/avif" srcset="assets/img/swipe/rowan.avif"><img src="assets/img/swipe/rowan.webp" width="600" height="750" alt="Rowan: shy smile, freckles, orange ponytail, holding a big bouquet" loading="lazy" decoding="async" draggable="false"></picture></div>
+                <span class="stamp stamp--yum" aria-hidden="true">♥ Yum! ♥</span><span class="stamp stamp--yuck" aria-hidden="true">✕ Yuck ✕</span>
+                <div class="pcard__info"><h3 class="pcard__name">Rowan, 24</h3><p class="pcard__pro">He/Him</p><p class="pcard__about">About</p><p class="pcard__bio">Florist, sunshine enthusiast and garlic-knot lover. I’ll bring the flowers if you bring the conversation. Picnic date?</p></div>
+              </article>
+            </div>
+
+            <div class="app-actions">
+              <button class="chip chip--yuck" type="button" data-swipe-btn="left"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg>Yuck<svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+              <button class="chip chip--yum" type="button" data-swipe-btn="right"><svg class="i" aria-hidden="true"><use href="#i-heart"/></svg>Yum!<svg class="i" aria-hidden="true"><use href="#i-heart"/></svg></button>
+            </div>
+
+            <div class="app-result" data-result hidden>
+              <div class="app-result__card">
+                <img class="app-result__fangs" src="assets/img/swipe/fangs.webp" width="480" height="209" alt="" loading="lazy" decoding="async" data-result-fangs>
+                <p class="app-result__kicker" data-result-kicker></p>
+                <p class="app-result__title" data-result-title></p>
+                <p class="app-result__sub" data-result-sub></p>
+                <div class="app-result__actions" data-result-actions hidden>
+                  <button class="chip chip--yum" type="button" data-swipe-restart>Play again</button>
+                  <a class="chip chip--steam" href="https://store.steampowered.com/app/3206530/Love_at_first_Bite/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-steam"/></svg>Wishlist</a>
+                </div>
+              </div>
+            </div>
+            <p class="sr-only" role="status" aria-live="polite" data-swipe-live></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Studio -->
     <section class="studio" id="studio" aria-labelledby="studio-title">
@@ -269,7 +352,7 @@
         </div>
         <div class="studio__copy">
           <p class="eyebrow" data-reveal>The studio</p>
-          <h2 class="display studio__title" id="studio-title" data-reveal><span>Welcome to</span> <span class="studio__hbg">HBG</span></h2>
+          <h2 class="display studio__title" id="studio-title" data-reveal data-split><span>Welcome to</span> <span class="studio__hbg">HBG</span></h2>
           <p class="lead" data-reveal>Hi there, thanks for dropping by! We’re <strong>Honey Bun Games</strong>, an independent video game studio based out of Madrid, Spain.</p>
           <p data-reveal>We started out as a game jam team. Love at First Bite was our entry to the Indie Spain Jam 2023, and the idea had teeth: we took it through the PowerUp+ pre-incubation program and founded the studio to build the full game.</p>
           <ul class="facts" data-reveal>
@@ -287,7 +370,7 @@
       <div class="container">
         <header class="section-head">
           <p class="eyebrow eyebrow--honey" data-reveal>Our games</p>
-          <h2 class="display" id="games-title" data-reveal>Things we’ve made</h2>
+          <h2 class="display" id="games-title" data-reveal data-split>Things we’ve made</h2>
         </header>
 
         <article class="feature" data-reveal>
@@ -333,13 +416,16 @@
 
         <h3 class="games__sub" data-reveal>From the jam vault</h3>
         <div class="cards">
-          <article class="card" data-reveal>
+          <article class="card card--blaster" data-reveal>
             <a class="card__media" href="https://albertoportero.itch.io/blaster-buds" target="_blank" rel="noopener" data-tilt tabindex="-1" aria-hidden="true">
+              <video class="card__clip" muted playsinline preload="none" data-clips="assets/video/blaster-buds-2.mp4 assets/video/blaster-buds-3.mp4 assets/video/blaster-buds-1.mp4"></video>
+              <span class="bb-stars"><i></i><i></i><i></i><i></i><i></i></span>
               <picture>
                 <source type="image/avif" srcset="assets/img/games/blaster-buds-640.avif 640w, assets/img/games/blaster-buds-1280.avif 1280w" sizes="(max-width: 760px) 92vw, 560px">
                 <img src="assets/img/games/blaster-buds-640.webp" srcset="assets/img/games/blaster-buds-640.webp 640w, assets/img/games/blaster-buds-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 560px" width="1280" height="720" alt="" loading="lazy" decoding="async">
               </picture>
               <span class="card__ribbon"><svg class="i" aria-hidden="true"><use href="#i-trophy"/></svg>Best Mechanics</span>
+              <span class="card__live">Gameplay</span>
               <span class="feature__glare" aria-hidden="true"></span>
             </a>
             <div class="card__body">
@@ -379,7 +465,7 @@
       <div class="container contact__grid">
         <div class="contact__copy">
           <p class="eyebrow" data-reveal>Say hello</p>
-          <h2 class="display contact__title" id="contact-title" data-reveal><span>Drop us</span> <span>a line!</span></h2>
+          <h2 class="display contact__title" id="contact-title" data-reveal data-split><span>Drop us</span> <span>a line!</span></h2>
           <p class="lead" data-reveal>Press, publishing, events, playtests, or you just fell for a vampire? Our inbox is open and we’d love to hear from you.</p>
 
           <div class="mailcard" data-reveal>
@@ -406,14 +492,15 @@
             <source type="image/avif" srcset="assets/img/hero/vampire-560.avif 560w, assets/img/hero/vampire-1000.avif 1000w" sizes="(max-width: 900px) 70vw, 420px">
             <img src="assets/img/hero/vampire-560.webp" srcset="assets/img/hero/vampire-560.webp 560w, assets/img/hero/vampire-1000.webp 1000w" sizes="(max-width: 900px) 70vw, 420px" width="1000" height="1401" alt="" loading="lazy" decoding="async">
           </picture>
-          <div class="bubble bubble--1">hey… you up? 🌙</div>
-          <div class="bubble bubble--2">it’s a match! <svg class="i" aria-hidden="true"><use href="#i-heart"/></svg></div>
+          <div class="bubble bubble--1" data-bubble><span class="bubble__dots"><i></i><i></i><i></i></span><span class="bubble__msg">hey… you up? 🌙</span></div>
+          <div class="bubble bubble--2" data-bubble><span class="bubble__dots"><i></i><i></i><i></i></span><span class="bubble__msg">it’s a match! <svg class="i" aria-hidden="true"><use href="#i-heart"/></svg></span></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="peek" aria-hidden="true"><img src="assets/img/brand/bun.svg" width="39" height="26" alt="" loading="lazy" data-peek></div>
     <div class="container site-footer__grid">
       <div class="site-footer__brand">
         <a href="#top" class="site-footer__logo" aria-label="Honey Bun Games, back to top"><img src="assets/img/brand/hbg-wordmark.svg" width="242" height="130" alt="" loading="lazy"></a>
@@ -422,6 +509,7 @@
       <nav class="site-footer__nav" aria-label="Footer">
         <p class="site-footer__h">Explore</p>
         <ul>
+          <li><a href="#swipe">Play the mini demo</a></li>
           <li><a href="#games">Games</a></li>
           <li><a href="#studio">Studio</a></li>
           <li><a href="#contact">Contact</a></li>
