@@ -327,7 +327,12 @@ html.menu-open .brand { width: 52px; }
 /* ---------- Hero ---------- */
 .hero {
   --mx: 0; --my: 0; --sy: 0;
-  position: relative; isolation: isolate; overflow: hidden;
+  /* The bottom edge runs along the honey band's centre line (the band is rotated -2deg,
+     so its centre drops tan(2deg) * 50vw = 1.746vw at the left edge and rises as much at
+     the right). --band-c is how far above the hero's box bottom the band's centre sits. */
+  --band-c: 1.3rem;
+  position: relative; z-index: 1; isolation: isolate; overflow: visible;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--band-c) - 1.746vw), 0 calc(100% - var(--band-c) + 1.746vw));
   min-height: max(640px, 100vh); min-height: max(640px, 100svh);
   display: grid; place-items: center;
   padding: calc(var(--header-h) + 2rem) var(--gutter) clamp(9rem, 22vh, 13rem);
@@ -335,7 +340,7 @@ html.menu-open .brand { width: 52px; }
   background: var(--wine);
 }
 .hero__sky {
-  position: absolute; inset: 0; z-index: -3;
+  position: absolute; inset: 0 0 -4rem; z-index: -3;
   background:
     radial-gradient(60% 55% at 50% 42%, rgba(255, 61, 154, .55), transparent 70%),
     radial-gradient(90% 70% at 50% 110%, rgba(60, 11, 49, .9), transparent 70%),
