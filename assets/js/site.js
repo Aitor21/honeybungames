@@ -6,6 +6,20 @@
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
+  // Analytics: GoatCounter loads only once a site code is set in <meta name="goatcounter-code">.
+  // Links tagged with data-goatcounter-click are counted by GoatCounter itself; track() covers the rest.
+  const gcCode = ($('meta[name="goatcounter-code"]')?.content || '').trim();
+  if (/^[a-z0-9-]+$/i.test(gcCode)) {
+    const gc = document.createElement('script');
+    gc.async = true;
+    gc.src = 'https://gc.zgo.at/count.js';
+    gc.dataset.goatcounter = `https://${gcCode}.goatcounter.com/count`;
+    document.head.append(gc);
+  }
+  const track = (path, title) => {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title: title || path, event: true });
+  };
+
   // Header: glass panel once scrolled, hide on scroll down, show on scroll up.
   const header = $('[data-header]');
   const hero = $('[data-hero]');
@@ -226,6 +240,7 @@
     btn.addEventListener('click', async (e) => {
       try {
         await navigator.clipboard.writeText(btn.dataset.copy);
+        track('email/copy');
         label.textContent = 'Copied!';
         btn.classList.add('is-copied');
         burst(e.clientX, e.clientY, 7);
@@ -252,6 +267,7 @@
         return;
       }
       opener = btn;
+      track('trailer/' + id, btn.dataset.trailerTitle);
       frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1" title="${btn.dataset.trailerTitle || 'Trailer'}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
       dialog.showModal();
     });
@@ -396,6 +412,7 @@
       if (index >= cards.length || thirst <= 0) endNight();
     };
     const endNight = () => {
+      track(thirst <= 0 ? 'swipe-demo/game-over' : 'swipe-demo/survived');
       if (thirst <= 0) {
         showResult('You died of thirst…', 'GAME OVER', 'Do you want to retry?', { end: true });
       } else {
@@ -407,6 +424,7 @@
     const decide = (dir) => {
       if (busy || index >= cards.length) return;
       busy = true;
+      if (index === 0) track('swipe-demo/start');
       const card = cards[index];
       const human = card.dataset.human === 'true';
       const right = dir > 0;
@@ -440,6 +458,7 @@
       }, 260);
     };
     const restart = () => {
+      track('swipe-demo/replay');
       index = 0; caught = 0; busy = false;
       result.hidden = true;
       cards.forEach((c) => { c.style.transition = 'none'; $$('.stamp', c).forEach((st) => (st.style.opacity = '')); });

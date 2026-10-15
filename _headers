@@ -1,0 +1,16 @@
+# Netlify response headers: https://docs.netlify.com/routing/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+# Fonts never change under the same name.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images and clips change rarely; cache for 30 days.
+/assets/img/*
+  Cache-Control: public, max-age=2592000
+/assets/video/*
+  Cache-Control: public, max-age=2592000
