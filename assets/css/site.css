@@ -715,6 +715,8 @@ html.menu-open .brand { width: 52px; }
 .site-footer__logo { display: inline-block; width: 150px; transition: transform .45s var(--bounce); }
 .site-footer__logo:hover { transform: rotate(-4deg) scale(1.05); }
 .site-footer__brand p { margin-top: 1rem; max-width: 22em; }
+.site-footer__brand a { text-decoration-color: var(--honey); text-underline-offset: 4px; transition: color .2s; }
+.site-footer__brand a:hover { color: #fff; }
 .site-footer__h { font-size: .72rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--honey); margin-bottom: .9rem; }
 .site-footer__nav ul:not(.socials) { display: grid; gap: .45rem; }
 .site-footer__nav a { text-decoration: none; transition: color .2s; overflow-wrap: anywhere; }
