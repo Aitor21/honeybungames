@@ -365,7 +365,7 @@
     const screen = $('.phone__screen', app);
     const R = {
       kicker: $('[data-result-kicker]', app), title: $('[data-result-title]', app), sub: $('[data-result-sub]', app),
-      art: $('[data-result-art]', app), actions: $('[data-result-actions]', app),
+      art: $('[data-result-art]', app), bite: $('[data-result-bite]', app), actions: $('[data-result-actions]', app),
     };
     let index = 0, thirst = 50, caught = 0, busy = false, resultTimer = 0;
 
@@ -404,19 +404,19 @@
         d.addEventListener('animationend', () => d.remove());
       }
     };
-    // art: which of the game's end illustrations to show (human, vampire, thirst), or none.
-    const showResult = (kicker, title, sub, { chomp = false, end = false, art = null } = {}) => {
+    // art: 'bite' (two jaws chomping), one of the game's end illustrations ('vampire', 'thirst'), or none.
+    const showResult = (kicker, title, sub, { end = false, art = null } = {}) => {
       R.kicker.textContent = kicker;
       R.title.textContent = title;
       R.sub.textContent = sub;
-      R.art.hidden = !art;
-      if (art) R.art.src = `assets/img/demo/ui/end-${art}.webp`;
+      R.bite.hidden = art !== 'bite';
+      R.art.hidden = !art || art === 'bite';
+      if (art && art !== 'bite') R.art.src = `assets/img/demo/ui/end-${art}.webp`;
       R.actions.hidden = !end;
       result.hidden = false;
-      result.classList.toggle('is-chomp', chomp);
       live.textContent = `${kicker} ${title}. ${sub}`;
       clearTimeout(resultTimer);
-      if (!end) resultTimer = setTimeout(hideResult, 1700);
+      if (!end) resultTimer = setTimeout(hideResult, art === 'bite' ? 2500 : 1700); // let both chomps finish
     };
     const hideResult = () => {
       result.hidden = true;
@@ -429,7 +429,7 @@
         showResult('You died of thirst…', 'GAME OVER', 'Do you want to retry?', { end: true, art: 'thirst' });
       } else {
         const humans = cards.filter((c) => c.dataset.human === 'true').length;
-        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true, art: caught ? 'human' : 'vampire' });
+        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true, art: caught ? 'bite' : 'vampire' });
       }
       busy = true;
     };
@@ -455,8 +455,8 @@
         if (right && human) {
           caught++;
           setThirst(thirst + 40);
-          drips(14);
-          showResult('You got lucky…', 'What a great catch!', 'You’ve replenished your strength.', { chomp: true, art: 'human' });
+          showResult('You got lucky…', 'What a great catch!', 'You’ve replenished your strength.', { art: 'bite' });
+          setTimeout(() => drips(14), 420); // in time with the first snap of the jaws
         } else if (right && !human) {
           setThirst(thirst - 15);
           showResult('And so…', 'they were both vampires', 'No blood was sucked tonight.', { art: 'vampire' });
