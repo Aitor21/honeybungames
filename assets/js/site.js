@@ -365,7 +365,7 @@
     const screen = $('.phone__screen', app);
     const R = {
       kicker: $('[data-result-kicker]', app), title: $('[data-result-title]', app), sub: $('[data-result-sub]', app),
-      fangs: $('[data-result-fangs]', app), actions: $('[data-result-actions]', app),
+      art: $('[data-result-art]', app), actions: $('[data-result-actions]', app),
     };
     let index = 0, thirst = 50, caught = 0, busy = false, resultTimer = 0;
 
@@ -404,11 +404,13 @@
         d.addEventListener('animationend', () => d.remove());
       }
     };
-    const showResult = (kicker, title, sub, { chomp = false, end = false, fangs = chomp || end } = {}) => {
+    // art: which of the game's end illustrations to show (human, vampire, thirst), or none.
+    const showResult = (kicker, title, sub, { chomp = false, end = false, art = null } = {}) => {
       R.kicker.textContent = kicker;
       R.title.textContent = title;
       R.sub.textContent = sub;
-      R.fangs.hidden = !fangs;
+      R.art.hidden = !art;
+      if (art) R.art.src = `assets/img/demo/ui/end-${art}.webp`;
       R.actions.hidden = !end;
       result.hidden = false;
       result.classList.toggle('is-chomp', chomp);
@@ -424,10 +426,10 @@
     const endNight = () => {
       track(thirst <= 0 ? 'swipe-demo/game-over' : 'swipe-demo/survived');
       if (thirst <= 0) {
-        showResult('You died of thirst…', 'GAME OVER', 'Do you want to retry?', { end: true });
+        showResult('You died of thirst…', 'GAME OVER', 'Do you want to retry?', { end: true, art: 'thirst' });
       } else {
         const humans = cards.filter((c) => c.dataset.human === 'true').length;
-        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true });
+        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true, art: caught ? 'human' : 'vampire' });
       }
       busy = true;
     };
@@ -454,13 +456,13 @@
           caught++;
           setThirst(thirst + 40);
           drips(14);
-          showResult('You got lucky…', 'What a great catch!', 'You’ve replenished your strength.', { chomp: true });
+          showResult('You got lucky…', 'What a great catch!', 'You’ve replenished your strength.', { chomp: true, art: 'human' });
         } else if (right && !human) {
           setThirst(thirst - 15);
-          showResult('And so…', 'they were both vampires', 'No blood was sucked tonight.', { fangs: true });
+          showResult('And so…', 'they were both vampires', 'No blood was sucked tonight.', { art: 'vampire' });
         } else if (!right && !human) {
           setThirst(thirst - 5);
-          showResult('Good instincts…', 'that one bites back', 'Nobody got bitten. Your thirst still grows.', { fangs: true });
+          showResult('Good instincts…', 'that one bites back', 'Nobody got bitten. Your thirst still grows.');
         } else {
           setThirst(thirst - 20);
           showResult('Hmm…', 'dinner got away', 'They were human. Your thirst grows.');
@@ -475,7 +477,7 @@
       layout();
       requestAnimationFrame(() => cards.forEach((c) => (c.style.transition = '')));
       setThirst(50);
-      live.textContent = 'New night. Four profiles to go.';
+      live.textContent = `New night. ${cards.length} profiles to go.`;
     };
 
     // Dragging
