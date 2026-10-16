@@ -404,7 +404,7 @@
         d.addEventListener('animationend', () => d.remove());
       }
     };
-    // art: 'bite' (two jaws chomping), one of the game's end illustrations ('vampire', 'thirst'), or none.
+    // art: 'bite' (two jaws chomping), one of the game's end illustrations ('human', 'vampire', 'thirst'), or none.
     const showResult = (kicker, title, sub, { end = false, art = null } = {}) => {
       R.kicker.textContent = kicker;
       R.title.textContent = title;
@@ -429,7 +429,7 @@
         showResult('You died of thirst…', 'GAME OVER', 'Do you want to retry?', { end: true, art: 'thirst' });
       } else {
         const humans = cards.filter((c) => c.dataset.human === 'true').length;
-        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true, art: caught ? 'bite' : 'vampire' });
+        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true, art: caught ? 'human' : 'vampire' });
       }
       busy = true;
     };
