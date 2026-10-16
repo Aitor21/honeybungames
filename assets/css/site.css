@@ -1071,10 +1071,12 @@ html.menu-open .brand { width: 52px; }
 .app-result__art { width: 64%; margin: -.6rem auto .5rem; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .35)); animation: art-pop .6s var(--bounce) .05s both; }
 /* End screens: full-card win / lose art with the text on a Dark Plum fade */
 .app-result__panel { display: block; width: 100%; height: auto; }
-.app-result__card.is-end { padding: 0; overflow: hidden; background: var(--lb-plum); }
+/* Both end cards share one fixed shape (taken from the Game Over card), so a longer
+   message can never make the win card taller: the text sits over the bottom of the art. */
+.app-result__card.is-end { position: relative; padding: 0; overflow: hidden; aspect-ratio: 296 / 641; max-height: 100%; background: var(--lb-plum); }
 .app-result__card.is-end .app-result__panel { animation: panel-in .7s var(--ease-out) both; }
 .app-result__card.is-end .app-result__body {
-  position: relative; margin-top: -46%; padding: 3.2rem 1rem 1.2rem;
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 3.2rem 1rem 1.2rem;
   background: linear-gradient(rgba(35, 4, 36, 0), var(--lb-plum) 38%);
 }
 .app-result__card.is-end .app-result__title { font-size: 2rem; color: var(--lb-white); }
