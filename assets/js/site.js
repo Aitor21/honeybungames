@@ -365,7 +365,7 @@
     const screen = $('.phone__screen', app);
     const R = {
       kicker: $('[data-result-kicker]', app), title: $('[data-result-title]', app), sub: $('[data-result-sub]', app),
-      art: $('[data-result-art]', app), bite: $('[data-result-bite]', app), actions: $('[data-result-actions]', app),
+      art: $('[data-result-art]', app), bite: $('[data-result-bite]', app), panel: $('[data-result-panel]', app), card: $('.app-result__card', app), actions: $('[data-result-actions]', app),
     };
     let index = 0, thirst = 50, caught = 0, busy = false, resultTimer = 0;
 
@@ -404,11 +404,15 @@
         d.addEventListener('animationend', () => d.remove());
       }
     };
-    // art: 'bite' (two jaws chomping), one of the game's end illustrations ('human', 'vampire', 'thirst'), or none.
-    const showResult = (kicker, title, sub, { end = false, art = null } = {}) => {
+    // art: 'bite' (two jaws chomping), 'vampire' (the game's both-vampires art), or none.
+    // panel: 'win' or 'lose' for the full-card end screens.
+    const showResult = (kicker, title, sub, { end = false, art = null, panel = null } = {}) => {
       R.kicker.textContent = kicker;
       R.title.textContent = title;
       R.sub.textContent = sub;
+      R.card.classList.toggle('is-end', !!panel);
+      R.panel.hidden = !panel;
+      if (panel) R.panel.src = `assets/img/demo/ui/end-${panel}.webp`;
       R.bite.hidden = art !== 'bite';
       R.art.hidden = !art || art === 'bite';
       if (art && art !== 'bite') R.art.src = `assets/img/demo/ui/end-${art}.webp`;
@@ -426,10 +430,10 @@
     const endNight = () => {
       track(thirst <= 0 ? 'swipe-demo/game-over' : 'swipe-demo/survived');
       if (thirst <= 0) {
-        showResult('You died of thirst…', 'GAME OVER', 'Do you want to retry?', { end: true, art: 'thirst' });
+        showResult('You died of thirst…', 'GAME OVER', 'Do you want to retry?', { end: true, panel: 'lose' });
       } else {
         const humans = cards.filter((c) => c.dataset.human === 'true').length;
-        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true, art: caught ? 'human' : 'vampire' });
+        showResult('The sun is rising…', `Night 1 survived!`, `You caught ${caught} of ${humans} humans. The full game has many more nights (and teeth).`, { end: true, panel: caught ? 'win' : 'lose' });
       }
       busy = true;
     };
